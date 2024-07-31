@@ -1,0 +1,83 @@
+{
+  "name": "test-publish-ui-nghiemnv",
+  "version": "1.0.20",
+  "private": true,
+  "description": "Package for testing publish ui",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/types/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && npm run rollup:build && npm run sass",
+    "publish": "npm run build && npm publish",
+    "start": "npm run build -- -w",
+    "rollup:build": "rollup -c --bundleConfigAsCjs",
+    "sass": "sass src/scss/style.scss:dist/css/style.css --style=compressed",
+    "sass:watch": "sass src/scss/:dist/css/ --watch",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "tailwind": "npx tailwindcss -i src/scss/style.scss -o dist/style/style.css"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "types": "./dist/esm/types/index.d.ts"
+    },
+    "./react/*": {
+      "require": "./dist/cjs/*/index.js",
+      "import": "./dist/esm/*/index.js",
+      "types": "./dist/esm/types/*/index.d.ts"
+    },
+    "./style": {
+      "import": "./dist/css/style.css",
+      "require": "./dist/css/style.css"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "publish",
+    "ui",
+    "frontend"
+  ],
+  "author": "nghiemnv",
+  "license": "ISC",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@storybook/addon-essentials": "^8.2.6",
+    "@storybook/addon-interactions": "^8.2.6",
+    "@storybook/addon-links": "^8.2.6",
+    "@storybook/addon-onboarding": "^8.2.6",
+    "@storybook/addon-styling-webpack": "^1.0.0",
+    "@storybook/blocks": "^8.2.6",
+    "@storybook/react": "^8.2.6",
+    "@storybook/react-vite": "^8.2.6",
+    "@storybook/test": "^8.2.6",
+    "@types/react": "^18.3.3",
+    "autoprefixer": "^10.4.19",
+    "glob": "^11.0.0",
+    "node-sass": "^9.0.0",
+    "postcss": "^8.4.40",
+    "postcss-import": "^16.1.0",
+    "rollup": "^2.56.2",
+    "rollup-plugin-dts": "^3.0.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.77.8",
+    "rimraf": "^3.0.2",
+    "storybook": "^8.2.6",
+    "tailwindcss": "^3.4.7",
+    "tslib": "^2.6.3",
+    "turbo": "^2.0.9",
+    "typescript": "^4.3.5",
+    "vite": "^5.3.5"
+  },
+  "dependencies": {
+    "react": "^18.3.1"
+  }
+}
