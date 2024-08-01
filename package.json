@@ -32,6 +32,10 @@
       "import": "./dist/vue/build/index.es.js",
       "require": "./dist/vue/build/index.cjs.js"
     },
+    "./vue/css": {
+      "require": "./dist/vue/style.css",
+      "import": "./dist/vue/style.css"
+    },
     "./vue/*": {
       "require": "./dist/vue/build/*/index.cjs.js",
       "import": "./dist/vue/build/*/index.es.js",
