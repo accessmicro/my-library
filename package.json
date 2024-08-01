@@ -28,6 +28,10 @@
       "import": "./dist/react/esm/*/index.js",
       "types": "./dist/react/esm/types/*/index.d.ts"
     },
+    "./react/css": {
+      "require": "./dist/react/cjs/index.css",
+      "import": "./dist/react/esm/index.css"
+    },
     "./style": {
       "import": "./dist/react/css/style.css",
       "require": "./dist/react/css/style.css"
