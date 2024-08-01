@@ -1,0 +1,1 @@
+"use strict";const e=require("vue"),n={class:"lg-btn"},c=e.defineComponent({__name:"index",setup(s){let t=e.ref("nghiem");return(o,r)=>(e.openBlock(),e.createElementBlock("button",n,e.toDisplayString(e.unref(t)),1))}});exports._sfc_main=c;

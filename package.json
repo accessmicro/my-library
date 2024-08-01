@@ -23,14 +23,24 @@
       "import": "./dist/react/esm/index.js",
       "types": "./dist/react/esm/types/index.d.ts"
     },
+    "./react/css": {
+      "require": "./dist/react/cjs/index.css",
+      "import": "./dist/react/esm/index.css"
+    },
+    "./vue": {
+      "types": "./dist/vue/types/index.d.ts",
+      "import": "./dist/vue/build/index.es.js",
+      "require": "./dist/vue/build/index.cjs.js"
+    },
+    "./vue/*": {
+      "require": "./dist/vue/build/*/index.cjs.js",
+      "import": "./dist/vue/build/*/index.es.js",
+      "types": "./dist/vue/types/*/index.vue.d.ts"
+    },
     "./react/*": {
       "require": "./dist/react/cjs/*/index.js",
       "import": "./dist/react/esm/*/index.js",
       "types": "./dist/react/esm/types/*/index.d.ts"
-    },
-    "./react/css": {
-      "require": "./dist/react/cjs/index.css",
-      "import": "./dist/react/esm/index.css"
     },
     "./style": {
       "import": "./dist/react/css/style.css",

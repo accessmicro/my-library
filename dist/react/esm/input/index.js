@@ -1,1 +1,1 @@
-import{j as t}from"../jsx-runtime-817338be.js";import"react";var e=function(){return t.exports.jsx("input",{type:"text",className:"lg-input"})};export{e as default};
+import{j as t}from"../jsx-runtime-92712c09.js";import"react";var e=function(){return t.exports.jsx("input",{type:"text",className:"nghiem"})};export{e as default};

@@ -1,0 +1,1 @@
+"use strict";const e=require("vue"),l=e.defineComponent({__name:"index",setup(r){let t=e.ref("nghiem");return(s,n)=>e.withDirectives((e.openBlock(),e.createElementBlock("input",{type:"text",class:"lg-input","onUpdate:modelValue":n[0]||(n[0]=i=>e.isRef(t)?t.value=i:t=i)},null,512)),[[e.vModelText,e.unref(t)]])}});exports._sfc_main=l;
