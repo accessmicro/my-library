@@ -3,9 +3,9 @@
   "version": "1.0.20",
   "private": true,
   "description": "Package for testing publish ui",
-  "main": "./dist/react/cjs/index.js",
-  "module": "./dist/react/esm/index.js",
-  "types": "./dist/react/esm/types/index.d.ts",
+  "main": "./dist/react/build/index.cjs.js",
+  "module": "./dist/react/build/index.es.js",
+  "types": "./dist/react/types/index.d.ts",
   "scripts": {
     "build": "rm -rf dist && npm run rollup:build && npm run sass",
     "publish": "npm run build && npm publish",
@@ -19,13 +19,9 @@
   },
   "exports": {
     ".": {
-      "require": "./dist/react/cjs/index.js",
-      "import": "./dist/react/esm/index.js",
-      "types": "./dist/react/esm/types/index.d.ts"
-    },
-    "./react/css": {
-      "require": "./dist/react/cjs/index.css",
-      "import": "./dist/react/esm/index.css"
+      "require": "./dist/react/build/index.cjs.js",
+      "import": "./dist/react/build/index.es.js",
+      "types": "./dist/react/types/index.d.ts"
     },
     "./vue": {
       "types": "./dist/vue/types/index.d.ts",
@@ -41,10 +37,19 @@
       "import": "./dist/vue/build/*/index.es.js",
       "types": "./dist/vue/types/*/index.vue.d.ts"
     },
+    "./react": {
+      "types": "./dist/react/types/index.d.ts",
+      "import": "./dist/react/build/index.es.js",
+      "require": "./dist/react/build/index.cjs.js"
+    },
+    "./react/css": {
+      "require": "./dist/react/style.css",
+      "import": "./dist/react/style.css"
+    },
     "./react/*": {
-      "require": "./dist/react/cjs/*/index.js",
-      "import": "./dist/react/esm/*/index.js",
-      "types": "./dist/react/esm/types/*/index.d.ts"
+      "require": "./dist/react/build/*/index.cjs.js",
+      "import": "./dist/react/build/*/index.es.js",
+      "types": "./dist/react/types/*/index.d.ts"
     },
     "./style": {
       "import": "./dist/react/css/style.css",
